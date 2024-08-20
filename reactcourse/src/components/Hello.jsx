@@ -1,10 +1,16 @@
-function Hello(props) {
-// como cualquier otra funcion somos capaces de pasarle parametros a la misma 
-// los parametros son OBJETOS los cuales no pueden renderizarce directamente en html sino que deben ser llamados
-// por lo que la sintaxis seria   nombreObjetoParametroFuncion .(punto) nombrePropiedadEtiquetaComponente
-    return (
+//function Hello(props) {
+// La destructuracion es una practica usual de javascript
+// esta nos permite prescindir de tener que llamar al objeto y luego al atributo
+// dandonos la posibilidad de llamar directamente a los atributos 
+//const {name,message} = props;
+// se crean dos constantes en este caso name y message donde se guardan los valores
+// que le llegan al objeto por las propiedades.
+function Hello({name,message}){
+//tambien se puede reemplazar al objeto props y pasar por parametro directamente
+//los atributos que figuran al momento de llamar el componente
+return (
         <div>
-            <h1>{props.message} { props.name }</h1>
+            <h1>{message} { name }</h1>
         </div>
     );
 }
