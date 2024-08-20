@@ -1,16 +1,24 @@
-//function Hello(props) {
-// La destructuracion es una practica usual de javascript
-// esta nos permite prescindir de tener que llamar al objeto y luego al atributo
-// dandonos la posibilidad de llamar directamente a los atributos 
-//const {name,message} = props;
-// se crean dos constantes en este caso name y message donde se guardan los valores
-// que le llegan al objeto por las propiedades.
-function Hello({name,message}){
-//tambien se puede reemplazar al objeto props y pasar por parametro directamente
-//los atributos que figuran al momento de llamar el componente
-return (
+/* function Hello(props) {
+    // se le pasa por parametro el objeto props
+    //el cual viene cargado con el objeto person
+    // porlo que al ser dos objetos, para acceder a sus datos 
+    //debemos primero llamar al objetoProps.objetoPerson.propiedad
+    return (
         <div>
-            <h1>{message} { name }</h1>
+            <h1>
+                {props.person.message} {props.person.name} {props.person.seatNumbers}
+            </h1>
+        </div>
+    );
+} */
+//destructurando el objeto props podemos directamente pasarle el objeto person
+// para asi directamente acceder a los atributos del objeto person sin pasar por el objeto props
+function Hello({person}) {
+    return (
+        <div>
+            <h1>
+                {person.message} {person.name} {person.seatNumbers}
+            </h1>
         </div>
     );
 }
