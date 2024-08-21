@@ -3,18 +3,19 @@ import Code2 from "./Code2";
 
 export default function ConditionalComponent2() {
 
-    // tambien podemos usar en este caso un operador ternario
-    // primero creamos una variable booleana 
-    // let variable = true/false
-    // despues creamos una variable donde guardaremos el resultado de la operacion
-    // let resultado;
-    const display = false;
-    // por ultimo le asignamos el valor a resultado mediante la operacion ternaria
-    //
-    // resultado = variable ? "BoolEsTrue" : "BoolEsFalse"
-    let message = display ? <Code /> : <Code2 />;
-    // luego retornamos el contenido de la variable resultado
+    const display = true;
+//como no es una buena practica el tener dos o mas returns desntro
+//de una estuctura de control lo que se hace es 
+// crear un elemento variable al cual no se le asigna ningun valor
+// y dependioendo de la condicion a esta variable se le asiganara como valor
+// un componente u otro 
+    let message;
+
+    if (display) {
+        message = <Code/> ;
+    } else {
+        message = <Code2/> ;
+    }
+
     return message;
 }
-
-

@@ -1,12 +1,11 @@
-import ConditionalComponent2 from "./components/ConditionalComponent2";
+import Fruits from "./components/Fruits";
 
 function App() {
- 
 
   return (
   
     <div className="App">
-      <ConditionalComponent2 />
+      <Fruits />
     </div>
   );
 }
