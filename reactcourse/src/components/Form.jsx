@@ -1,21 +1,17 @@
 import { useState } from "react";
 
 export default function Form(){
-    //para manejar eventos en multiples inputs lo que se puede hacer es 
-    // crear un objeto en el state con los corchetes e indicando
-    //las propiedades que va a poseer dicho objeto
-    const [name,setName] = useState({firstName:"" , lastName:""});
-    // y para capturar la informacion que ingresa por el form
-    // hay que tener en cuenta que setName ahora va a recibir valores para dos propiedades
-    // diferentes de un mismo objeto por lo que hay que indicarle en que propiedad 
-    // se va a almacenar el input
-    // tambien para mantener lo capturado anteriormente por uno u otro input 
-    // se coloca entre llaves ...objeto, propiedadAModificar
-    // para indicarle al estado 
-    //que no importa las propiedades que tengo el objeto en cuestion 
-    // solo vamos a estar modificando una propiedad en concreto
-    // esto hace que no tengamos que llamar a todas las pripiedades para cambiar una sola
-    return (
+   const [name,setName] = useState({firstName:"" , lastName:""});
+
+   //creamos la funcion para manejar el submit y en este caso
+   // añadimos un console log para revisar si efectivamente nos devuelve por consola
+   // lo ingresado en los inputs 
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log(name);
+    }
+
+   return (
         <div>
 
             <h2>Nombre ingresado: {name.firstName}</h2>
@@ -39,6 +35,10 @@ export default function Form(){
                     type="text"
                     value={name.lastName}
                 />
+                {/*Para manejar los submit de un form podemos primero definir que 
+                la pagina no se recarge ya que esto limpia los datos almacenados en los estados 
+                por lo que añadimos un  evento onClick que previene el Refresh */}
+                <button onClick={(e)=>handleSubmit(e)}>Add</button>
             </form>
         </div>
     );
