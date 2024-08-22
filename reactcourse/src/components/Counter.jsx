@@ -1,31 +1,35 @@
 import { useState } from "react";
-//para utilizar los HOOK uno debe importarlos al comienzo del componente
-export default function Counter() {
-    // debido a que las props son inmutables es que se utilizan los estados
-    // los estados son variables que contienen informacion 
-    // para crear un estado debemos definir entre corchetes nuesta variable
-    // count y una funcion que alterara dicho estado es este caso setCount
-    // utilizando el HOOK useState pudiendo tambien darle un valor inicial
-    // a la cariable count dentro de los parentesis del HOOK
-    const [count, setCount] = useState(0);
 
-    //en este ejemplo usaremos el evento onClick para cambiar los valores del
-    //estado
+export default function Counter() {
+    const [count, setCount] = useState(0);
+    //se puede tambien utilizar states para modificar otros states
+    // definimos nuestro nuevo estado
+    const [value, setValue] = useState(1);
+    //añadimos nuestra variable del segundo estado para que modifique 
+    //la variable del primer estado
     function increment(){
-        //como la variable count es una constante esta no puede ser modificada directamente
-        // en su lugar se utiliza la funcion expresada al momento de crear el estado
-        //para poder modificarla
-        setCount(count+1);
+        setCount(count+value);
     }
 
     function decrement(){
-        setCount(count-1);
+        setCount(count-value);
+    }
+    //creamos las funciones para manejar nuestro nuevo estado 
+    function increaseValue(){
+        setValue(value + 1);
+    }
+    function decreaseValue(){
+        setValue (value -1);
     }
 
     return (
         <div>
-           <h1> Count value is: {count} </h1> <br/>
-            <button onClick={increment}>increment</button><br/>
+           <h1> Count value is: {count} </h1> 
+            <button onClick={increment}>increment</button>
             <button onClick={decrement}>decrement</button>
+            <hr/>
+            <h1>Change value of buttons by: {value}</h1>
+            <button onClick={increaseValue}>Increase</button>
+            <button onClick={decreaseValue} >Decrease</button>
         </div>);
 }
