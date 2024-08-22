@@ -1,11 +1,10 @@
-import Message from "./components/Messaje";
-
+import Counter from "./components/Counter";
 function App() {
 
   return (
   
     <div className="App">
-      <Message />
+      <Counter/>
     </div>
   );
 }
