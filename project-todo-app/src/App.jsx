@@ -1,3 +1,4 @@
+import InlineComponent from "./components/InLineComponent"
 import Todo from "./components/Todo"
 
 function App() {
@@ -5,7 +6,8 @@ function App() {
   return (
     <div className="App"> 
     {/*Componente que maneja el input de la lista*/}
-        <Todo/>
+      {/* <Todo/> */}
+      <InlineComponent/>
     </div>
   )
 }
