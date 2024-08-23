@@ -1,5 +1,6 @@
 import { useState } from "react";
 //importmaos el hook de react
+import ToDoItem from "./ToDoItem";
 
 export default function Todo() {
 
@@ -37,9 +38,14 @@ export default function Todo() {
                 <button type="submit">Add</button>
             </form>
         {
-        /*console log verificando el array de strings*/
-        console.log(toDoList)
-        }
+        /*console log verificando el array de strings
+        console.log(toDoList)*/
+        /*Utilizamos nuestro array con la funcion map para renderizar su contenido. 
+        a cada elemento del array se lo representa con la variable item , se utiliza un callback a un componente
+        que renderiza la lista y le pasamos como propiedades unique key el id del item  y el item en si mismo*/
+            toDoList.map((item) => (
+                <ToDoItem key={item} item={item} />    
+        ))}
         </div>
     );
 }
