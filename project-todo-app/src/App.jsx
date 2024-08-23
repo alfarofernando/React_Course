@@ -1,15 +1,14 @@
-import InlineComponent from "./components/InLineComponent"
-import OutlineComponent from "./components/OutlineComponent"
+import Header from "./components/Header"
 import Todo from "./components/Todo"
+import './App.css'
 
 function App() {
   
   return (
     <div className="App"> 
+      <Header/>
     {/*Componente que maneja el input de la lista*/}
-      {/* <Todo/> */}
-      <InlineComponent />
-      <OutlineComponent/>
+      <Todo/>
     </div>
   )
 }
