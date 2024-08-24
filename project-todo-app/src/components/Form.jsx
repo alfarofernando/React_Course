@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './Form.module.css';
 
 export default function Form({ setToDoList, toDoList }) { // Recibe las props desde el componente padre
     
@@ -13,13 +14,17 @@ export default function Form({ setToDoList, toDoList }) { // Recibe las props de
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className={styles.todoform} onSubmit={handleSubmit}>
                 <input
+                    className={styles.todoinput}
                     onChange={(e) => setTodo(e.target.value) /* Pasamos las funciones como props */} 
                     value={toDo}
                     type="text"
+                    placeholder="...Enter Task To Do..."
                 />
-                <button type="submit">Add</button>
+                <button
+                    className={styles.todobutton}
+                    type="submit">Add</button>
             </form>
         </>
     );
