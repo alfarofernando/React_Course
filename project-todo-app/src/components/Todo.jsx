@@ -12,7 +12,7 @@ export default function Todo() {
         <div>
             {/* Pasamos setToDoList y toDoList como props al componente Form */}
             <Form setToDoList={setToDoList} toDoList={toDoList} />
-            <TodoList toDoList={toDoList} />
+            <TodoList toDoList={toDoList} setToDoList={setToDoList} />
         </div>
     );
 }
