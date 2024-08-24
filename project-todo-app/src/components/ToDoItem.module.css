@@ -5,14 +5,19 @@
     padding: 0.2rem;
     font-size: 1.5rem;
     font-weight: bold;
-
-
-}
-
-.itemname{
-
+    text-align: center;
 }
 
 .line{
     border: 1px solid wheat;
+}
+
+.itembutton{
+    float:right;
+    padding: 1rem 1rem;
+    border: none;
+    background-color: yellow;
+    color: black;
+    margin-top: -.5rem;
+    cursor: pointer;
 }
