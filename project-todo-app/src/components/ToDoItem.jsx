@@ -15,7 +15,7 @@ export default function ToDoItem({item, toDoList ,setToDoList}) {
         <div className={styles.item}>
             
             <div className={styles.itemname}>
-                {item}
+                {item.name}
 
                 <span>
                     <button

@@ -3,13 +3,15 @@ import styles from './Form.module.css';
 
 export default function Form({ setToDoList, toDoList }) { // Recibe las props desde el componente padre
     
-    const [toDo, setTodo] = useState("");// Estado para almacenar la lista de tareas
+    //estado que guarda un array de objetos con propiedades nombre y si estan completas o no
+    const [toDo, setTodo] = useState({name:"",done:false});
+    
 
     function handleSubmit(e) {
         e.preventDefault(); // Previene que el formulario recargue la página al hacer submit
         console.log(toDo);  // Muestra en consola el valor actual del input
         setToDoList([...toDoList , toDo]); // Agrega el nuevo ítem a la lista
-        setTodo(""); // Limpia el input después de añadir la tarea
+        setTodo({name:"",done:false}); // Limpia el input después de añadir la tarea
     }
 
     return (
@@ -17,8 +19,8 @@ export default function Form({ setToDoList, toDoList }) { // Recibe las props de
             <form className={styles.todoform} onSubmit={handleSubmit}>
                 <input
                     className={styles.todoinput}
-                    onChange={(e) => setTodo(e.target.value) /* Pasamos las funciones como props */} 
-                    value={toDo}
+                    onChange={(e) => setTodo({ name: e.target.value , done:false }) /* camputarmos el valor del input en la propiedad name del objeto */} 
+                    value={toDo.name}
                     type="text"
                     placeholder="...Enter Task To Do..."
                 />
