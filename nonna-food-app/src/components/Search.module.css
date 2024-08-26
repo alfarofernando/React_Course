@@ -1,0 +1,26 @@
+.searchContainer {
+    margin: 20px auto;
+    width: 80%;
+    position: relative;
+}
+
+.input {
+    border: none;
+    border-bottom: 1px solid #85a55f;
+    font-size: 1.5rem;
+    padding: .8rem 1.5rem;
+    width: 70%;
+    outline: none;
+}
+
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: 1rem;
+    background-color: #F9F1C3;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+}
