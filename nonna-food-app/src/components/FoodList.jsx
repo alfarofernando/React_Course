@@ -1,12 +1,11 @@
+import FoodItem from "./FoodItem";
 
-
-export default function FoodList(foodData,setFoodData){
+export default function FoodList({foodData}){
     return(
         <div>
-            {foodData.map((food)=>(
-                <div>
-                    <h1>{food.title}</h1>
-                </div>
+            {foodData.map(
+                (food)=>(
+                <FoodItem key={food.id} food={food} />
             ))}
         </div>
     );
