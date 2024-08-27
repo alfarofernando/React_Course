@@ -11,6 +11,7 @@
     padding: .8rem 1.5rem;
     width: 70%;
     outline: none;
+    cursor:text;
 }
 
 .button {
@@ -23,4 +24,5 @@
     font-weight: bold;
     text-align: center;
     color: black;
+    cursor:pointer;
 }
