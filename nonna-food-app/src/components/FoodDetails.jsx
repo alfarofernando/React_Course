@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import styles from "./FoodDetails.module.css";
 
 export default function FoodDetails({ foodId }) {
 
@@ -24,11 +25,11 @@ export default function FoodDetails({ foodId }) {
 
     return (
         
-        <div>
-            <div>
-                <h1>{food.title}</h1>
-                <img src={food.image} />
-                <div>
+        <div className={styles.recipeMain}>
+            <div className={styles.recipeCard}>
+                <h1 className={styles.recipeName}>{food.title}</h1>
+                <img className={styles.recipeImage} src={food.image} />
+                <div className={styles.recipeDetails}>
                     <span>
                         ⏰<strong>{food.readyInMinutes} Minutes</strong>
                     </span>
@@ -45,8 +46,8 @@ export default function FoodDetails({ foodId }) {
                 <div>
                     💲 <span>{(food.pricePerServing / 100).toFixed(2)} Per Serving</span>
                 </div>
-            </div>
-            <div>
+            
+            <div className={styles.recipeInstructions}>
                 <h2>Instructions</h2>
                 {isLoading? <p>Loading...</p> : 
                 <ol>
@@ -54,6 +55,7 @@ export default function FoodDetails({ foodId }) {
                         <li key={index}>{step.step}</li>
                     ))}
                 </ol>}
+            </div>
             </div>
         </div>
     );
