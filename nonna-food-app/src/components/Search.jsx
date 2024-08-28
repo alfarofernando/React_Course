@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "./Search.module.css";
+import RandomFood from "./RandomFood";
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
 const API_KEY = "03539d53cece40dc8ed02b29d023b710";
 
-export default function Search({ foodData, setFoodData }) {
+export default function Search({setFoodData , triggerSearch , setTriggerSearch }) {
   const [query, setQuery] = useState("");
-  const [triggerSearch, setTriggerSearch] = useState(false);
 
   //sintax of useEffect Hook
   useEffect(() => {
@@ -47,3 +47,4 @@ export default function Search({ foodData, setFoodData }) {
     </div>
   );
 }
+
