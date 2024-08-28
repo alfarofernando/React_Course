@@ -1,0 +1,7 @@
+.OuterContainer{
+    float:right;
+    width: 70%;
+    flex: 2;
+    padding: .5rem;
+    margin:.5rem;
+}
