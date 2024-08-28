@@ -26,10 +26,7 @@ export default function App() {
       <Container>
         <InnerContainer>
           <RandomFood setFoodData={setFoodData} triggerSearch={triggerSearch} />
-          <FoodList
-            foodData={foodData}
-            setFoodId={setFoodId}
-          />
+          <FoodList foodData={foodData} setFoodId={setFoodId} />
         </InnerContainer>
         <OuterContainer>
           <FoodDetails foodId={foodId} />
